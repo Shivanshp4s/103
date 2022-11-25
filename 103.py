@@ -29,9 +29,13 @@ observer.schedule(event_handler,from_dir,recursive=True)
 
 observer.start()
             
-while True :
-    time.sleep(2)
-    print("running....")
+try:   
+    while True :
+        time.sleep(2)
+        print("running....")
+except KeyboardInterrupt:
+    print("stopped!")
+    observer.stop()
 
 
 
